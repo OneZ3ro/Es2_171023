@@ -17,26 +17,26 @@ public class Application {
             EventoDAO ed = new EventoDAO(em);
             LocalDate oggi = LocalDate.now();
 
-//            Evento evento2 = new Evento("Festa del lavoro", oggi, "Penso sarà noioso", TipoEvento.PRIVATO, 30);
-//            ed.save(evento2);
+            Evento evento = new Evento("Festa del lavoro", oggi, "Penso sarà noioso", TipoEvento.PRIVATO, 30);
+            ed.save(evento);
 
             Evento eventoFromDB = ed.getById(1);
             if (eventoFromDB != null) {
                 System.out.println(eventoFromDB);
             }
 
-//            ed.delete(2);
+//            ed.delete(1);
 
-            Evento refreshEventoFromDB = ed.getById(2);
-            if (refreshEventoFromDB != null){
-                refreshEventoFromDB.setTitolo("Party lavoro");
-                System.out.println("PRE-REFRESH");
-                System.out.println(refreshEventoFromDB);
-
-                ed.refresh(2);
-                System.out.println("POST REFRESH");
-                System.out.println(refreshEventoFromDB);
-            }
+//            Evento refreshEventoFromDB = ed.getById(2);
+//            if (refreshEventoFromDB != null){
+//                refreshEventoFromDB.setTitolo("Party lavoro");
+//                System.out.println("PRE-REFRESH");
+//                System.out.println(refreshEventoFromDB);
+//
+//                ed.refresh(2);
+//                System.out.println("POST REFRESH");
+//                System.out.println(refreshEventoFromDB);
+//            }
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
         } finally {

@@ -1,8 +1,6 @@
 package angelomoreno.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -14,6 +12,7 @@ public class Evento {
     private String titolo;
     private LocalDate dataEvento;
     private String descrizione;
+    @Enumerated(EnumType.STRING)
     private TipoEvento tipoEvento;
     private int numeroMassimoPartecipanti;
 
