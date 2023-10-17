@@ -3,6 +3,7 @@ package angelomoreno.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -11,14 +12,14 @@ public class Evento {
     @GeneratedValue
     private long id;
     private String titolo;
-    private Date dataEvento;
+    private LocalDate dataEvento;
     private String descrizione;
     private TipoEvento tipoEvento;
     private int numeroMassimoPartecipanti;
 
     public Evento(){};
 
-    public Evento(String titolo, Date dataEvento, String descrizione, TipoEvento tipoEvento, int numeroMassimoPartecipanti) {
+    public Evento(String titolo, LocalDate dataEvento, String descrizione, TipoEvento tipoEvento, int numeroMassimoPartecipanti) {
         this.titolo = titolo;
         this.dataEvento = dataEvento;
         this.descrizione = descrizione;
@@ -38,11 +39,11 @@ public class Evento {
         this.titolo = titolo;
     }
 
-    public Date getDataEvento() {
+    public LocalDate getDataEvento() {
         return dataEvento;
     }
 
-    public void setDataEvento(Date dataEvento) {
+    public void setDataEvento(LocalDate dataEvento) {
         this.dataEvento = dataEvento;
     }
 
